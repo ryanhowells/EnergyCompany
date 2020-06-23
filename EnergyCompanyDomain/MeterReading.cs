@@ -12,12 +12,12 @@ namespace EnergyCompanyDomain
             MeterReadValue = meterReadValue;
         }
 
-        public Guid MeterReadingId { get; set; }
+        public Guid MeterReadingId { get; private set; }
 
-        public string AccountId { get; set; }
+        public string AccountId { get; private set; }
 
-        public DateTime MeterReadingDateTime { get; set; }
+        public DateTime MeterReadingDateTime { get; private set; }
 
-        public string MeterReadValue { get; set; }
+        public string MeterReadValue { get; private set; }
     }
 }

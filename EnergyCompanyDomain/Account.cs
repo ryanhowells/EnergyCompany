@@ -7,10 +7,10 @@ namespace EnergyCompanyDomain
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string AccountId { get; set; }
+        public string AccountId { get; private set; }
 
-        public string FirstName { get; set; }
+        public string FirstName { get; private set; }
 
-        public string LastName { get; set; }
+        public string LastName { get; private set; }
     }
 }

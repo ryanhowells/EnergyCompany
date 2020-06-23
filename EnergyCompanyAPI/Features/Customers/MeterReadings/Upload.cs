@@ -6,6 +6,8 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -59,7 +61,8 @@ namespace EnergyCompanyAPI.Features.Customers.MeterReadings
                 MeterReadingsValidator validator = new MeterReadingsValidator();
 
                 var uploadViewModel = new UploadMeterReadingViewModel();
-                IEnumerable<MeterReading> meterReadings = _context.MeterReadings.ToArray();
+                IEnumerable<string> allAccountIds = request.MeterReadings.Select(x => x.AccountId).Distinct();
+                IEnumerable<MeterReading> meterReadings = _context.MeterReadings.Where(x => allAccountIds.Contains(x.AccountId));
 
                 foreach (var meterReading in request.MeterReadings)
                 {
@@ -70,7 +73,7 @@ namespace EnergyCompanyAPI.Features.Customers.MeterReadings
                     ValidationResult validationResult = validator.Validate(meterReading);
                     if (validationResult.IsValid && !accountMeterReadings.Contains(meterReading.MeterReadValue))
                     {
-                        await _context.MeterReadings.AddAsync(
+                        _context.MeterReadings.Add(
                             new MeterReading(
                                 meterReading.AccountId,
                                 meterReading.MeterReadingDateTime,

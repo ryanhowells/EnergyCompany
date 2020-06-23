@@ -1,7 +1,6 @@
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\bin\Debug\netcoreapp3.1\EnergyCompanyDomain.deps.json
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\bin\Debug\netcoreapp3.1\EnergyCompanyDomain.dll
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\bin\Debug\netcoreapp3.1\EnergyCompanyDomain.pdb
-C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\obj\Debug\netcoreapp3.1\EnergyCompanyDomain.csprojAssemblyReference.cache
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\obj\Debug\netcoreapp3.1\EnergyCompanyDomain.AssemblyInfoInputs.cache
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\obj\Debug\netcoreapp3.1\EnergyCompanyDomain.AssemblyInfo.cs
 C:\Users\Ryan\source\repos\EnergyCompany\src\EnergyCompanyDomain\obj\Debug\netcoreapp3.1\EnergyCompanyDomain.csproj.CoreCompileInputs.cache

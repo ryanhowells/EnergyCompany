@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -39,15 +37,15 @@ namespace EnergyCompanyWeb.Pages
 
             var request = new PostMeterReadingsRequest();
 
-            using var reader = FormFile.OpenReadStream();
-            using var csv = new CsvReader(new ExcelParser(reader, "in"));
             try
             {
-                var meterReadings = csv.GetRecords<MeterReading>();
+                using var reader = FormFile.OpenReadStream();
+                using var csv = new CsvReader(new ExcelParser(reader, "in"));
+                var meterReadings = csv.GetRecordsAsync<MeterReading>();
 
                 request.MeterReadings = new List<PostMeterReadingsRequest.MeterReading>();
 
-                foreach (var meterReading in meterReadings)
+                await foreach (var meterReading in meterReadings)
                 {
                     request.MeterReadings.Add(new PostMeterReadingsRequest.MeterReading
                     {
