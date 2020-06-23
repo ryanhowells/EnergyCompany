@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (Model.UploadError)
+{
+    <div class="text-center mb-2 bg-danger" role="alert">
+        <label>Failed to convert CSV, please edit the file and try again.</label>
+    </div>
+}
+
+@if (Model.TotalSuccessCount > 0)
+{
+    <div class="text-center mb-2 bg-success" role="alert">
+        <label>Successfully added @Model.TotalSuccessCount meter readings.</label>
+    </div>
+}
+@if (Model.TotalFailCount > 0)
+{
+    <div class="text-center mb-2 bg-danger" role="alert">
+        <label>Failed to add @Model.TotalFailCount meter readings.</label>
+    </div>
+}
+
+<form enctype="multipart/form-data" method="post">
+    <div class="text-center">
+        <label for="file">Upload file:</label>
+        <input asp-for="@Model.FormFile" type="file">
+        <input type="submit" value="Upload file" />
+    </div>
+</form>
+

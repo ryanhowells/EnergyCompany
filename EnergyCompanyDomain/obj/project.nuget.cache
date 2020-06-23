@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hDQJm5CX6UeEgMT9QzpASaAWCW9aEYogBdyIT5dNFys8HQTZBdwVpQN7KBbZMbC6QzhTf72z7PWgfzwzlW2yKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ryan\\source\\repos\\EnergyCompany\\src\\EnergyCompanyDomain\\EnergyCompanyDomain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ryan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
